@@ -59,7 +59,7 @@ $(".calBtn").click(function () {
 });
 
 function gradePoints(grade) {
-  if (grade == "A / A+") return 4.0;
+  if (grade === "A / A+") return 4.0;
   else if (grade === "A-") return 3.67;
   else if (grade === "B+") return 3.33;
   else if (grade === "B") return 3.0;
