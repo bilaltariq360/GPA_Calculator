@@ -63,7 +63,7 @@ function gradePoints(grade) {
   else if (grade === "A-") return 3.67;
   else if (grade === "B+") return 3.33;
   else if (grade === "B") return 3.0;
-  else if (grade === "B-") return 2.77;
+  else if (grade === "B-") return 2.67;
   else if (grade === "C+") return 2.33;
   else if (grade === "C") return 2.0;
   else if (grade === "C-") return 1.67;
