@@ -1,0 +1,349 @@
+@font-face {
+  font-family: Header;
+  src: url(Nexa-Heavy.ttf);
+}
+@font-face {
+  font-family: Body;
+  src: url(Nexa-ExtraLight.ttf);
+}
+
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: Body;
+  font-weight: bold;
+}
+
+.header {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.header h1 {
+  font-family: Header;
+}
+
+.header img {
+  padding-right: 2rem;
+}
+
+.course-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  margin-top: 1rem;
+}
+
+:root {
+  --input-color: #222222;
+  --input-border: #bee1ff;
+  --input-background: #fff;
+
+  --input-border-focus: #007de4;
+
+  --group-color: var(--input-color);
+  --group-border: var(--input-border);
+  --group-background: #bee1ff;
+
+  --group-color-focus: #fff;
+  --group-border-focus: var(--input-border-focus);
+  --group-background-focus: #007de4;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  -webkit-appearance: none;
+  color: var(--input-color);
+  font-weight: bold;
+  border: 1px solid var(--input-border);
+  background: var(--input-background);
+  transition: border 0.3s ease;
+  &::placeholder {
+    color: var(--input-placeholder);
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--input-border-focus);
+  }
+}
+
+.form-group {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  width: 30%; /* Adjust the width as needed */
+  margin: auto; /* Center the form group within its container */
+  & > span,
+  .form-field {
+    white-space: nowrap;
+    display: block;
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+  }
+  .form-field {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 auto;
+    width: 1%;
+  }
+  & > span {
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 25px;
+    color: var(--group-color);
+    background: var(--group-background);
+    border: 1px solid var(--group-border);
+    transition: background 0.3s ease, border 0.3s ease, color 0.3s ease;
+  }
+  &:focus-within {
+    & > span {
+      color: var(--group-color-focus);
+      background: var(--group-background-focus);
+      border-color: var(--group-border-focus);
+    }
+  }
+}
+
+.course-input {
+  outline: none;
+  border: 0;
+  padding: 7px 15px;
+  border: 1px solid #c1c1c1;
+  border-radius: 4px;
+  position: relative;
+  background: transparent;
+}
+
+.spacer {
+  padding-right: 2rem;
+}
+
+.course {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 0.8rem;
+  position: relative;
+}
+.course .course-input {
+  color: #222222;
+  width: 20%;
+  box-sizing: border-box;
+  letter-spacing: 1px;
+}
+
+span.choose {
+  color: #222222;
+  padding: 5px 0 10px;
+  display: inherit;
+}
+
+.course-detail {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown {
+  width: 15%;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 0 1.5px #222222;
+  transition: all 0.5s ease;
+  position: relative;
+  font-size: 14px;
+  color: #222222;
+  height: 100%;
+  text-align: left;
+}
+.dropdown .select {
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+}
+.dropdown:hover {
+  box-shadow: 0 0 1.5px #222222;
+}
+.dropdown:active {
+  background-color: #c1c1c1;
+}
+.dropdown.active:hover,
+.dropdown.active {
+  box-shadow: 0 0 1.5px #222222;
+  border-radius: 2px 2px 0 0;
+  background-color: #f8f8f8;
+}
+.dropdown.active .select > i {
+  transform: rotate(-90deg);
+}
+.dropdown .dropdown-menu {
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+  left: 0;
+  margin-top: 1px;
+  box-shadow: 0 1px 2px #c1c1c1;
+  border-radius: 0 1px 2px 2px;
+  overflow: hidden;
+  display: none;
+  max-height: 144px;
+  overflow-y: auto;
+  z-index: 9;
+}
+.dropdown .dropdown-menu li {
+  padding: 10px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.dropdown .dropdown-menu {
+  padding: 0;
+  list-style: none;
+}
+.dropdown .dropdown-menu li:hover {
+  background-color: #f2f2f2;
+}
+.dropdown .dropdown-menu li:active {
+  background-color: #e2e2e2;
+}
+
+.error-box {
+  visibility: hidden;
+  margin: auto;
+  margin-top: 2rem;
+  width: 20%;
+  padding: 10px;
+  background-color: rgb(255, 213, 213);
+  border-left: 3px solid red;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.error-box p {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  font-size: 14px;
+  color: #222222;
+}
+.calBtn {
+  all: unset;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 3rem;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.calBtn::after,
+.calBtn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all 0.4s;
+}
+
+.calBtn::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #222222;
+  border-radius: 3px;
+}
+
+.calBtn::after {
+  transform: translate(10px, 10px);
+  width: 30px;
+  height: 30px;
+  background: #007de4;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.calBtn:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.calBtn:hover::after {
+  border-radius: 3px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.calBtn:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.gpa {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.gpa p {
+  font-family: Header;
+}
+
+.calgpa {
+  font-family: Header;
+  color: #007de4;
+}
+
+.footer {
+  padding: auto;
+  background-color: #222222;
+  margin-top: 15rem;
+  text-align: center;
+  line-height: 2rem;
+  color: #f8f8f8;
+  letter-spacing: 0.07rem;
+}
+
+.footer p {
+  font-weight: 100;
+}
