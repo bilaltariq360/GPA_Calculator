@@ -12,6 +12,7 @@
   margin: 0%;
   font-family: Body;
   font-weight: bold;
+  user-select: none;
 }
 
 .header {
