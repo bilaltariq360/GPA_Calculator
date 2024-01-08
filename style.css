@@ -12,6 +12,13 @@
   margin: 0%;
   font-family: Body;
   font-weight: bold;
+}
+
+html {
+  user-select: none;
+}
+
+body {
   user-select: none;
 }
 
